@@ -47,7 +47,7 @@ void	ft_hexa_putchar(char c)
 
 void	ft_put_carac(const void *addr, size_t size)
 {
-	int	i;
+	size_t	i;
 
 	i = -1;
 	while (++i < size)
@@ -71,8 +71,8 @@ void	spaces(int n)
 
 void	print_memory(const void *addr, size_t size)
 {
-	int	i;
-	int	cpt;
+	size_t	i;
+	int		cpt;
 
 	i = -1;
 	cpt = 0;
@@ -93,13 +93,4 @@ void	print_memory(const void *addr, size_t size)
 			ft_put_carac(addr + i - ((i + 1) % 16), ((i + 1) % 16));
 		}
 	}
-}
-
-int	main(void)
-{
-	int	tab[12] = {0, 23, 150, 255,
-	              12, 16,  21, 42, 44, 57, 16, 75};
-
-	print_memory(tab, sizeof(tab));
-	return (0);
 }
