@@ -1,14 +1,5 @@
 #include "brainfuck.h"
 
-void	ft_print_list(t_list *list)
-{
-	while (list)
-	{
-		printf("lol : %d\n", list->debut_boucle);
-		list = list->prev;	
-	}
-}
-
 void	ft_inter_brainfuck(char *tab, int octet, char *s, int operateur, t_list *list_prev)
 {
 	t_list		*list;
