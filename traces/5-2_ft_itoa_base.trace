@@ -1,0 +1,134 @@
+= Host-specific information ====================================================
+$> hostname; uname -msr
+e2r4p22.42.fr
+Darwin 15.4.0 x86_64
+$> date
+Sat Apr  2 09:12:35 CEST 2016
+$> gcc --version
+Configured with: --prefix=/Applications/Xcode.app/Contents/Developer/usr --with-gxx-include-dir=/usr/include/c++/4.2.1
+Apple LLVM version 7.3.0 (clang-703.0.29)
+Target: x86_64-apple-darwin15.4.0
+Thread model: posix
+InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
+$> clang --version
+Apple LLVM version 7.3.0 (clang-703.0.29)
+Target: x86_64-apple-darwin15.4.0
+Thread model: posix
+InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
+
+= User files collection ========================================================
+Collecting user files from Vogsphere
+Repository URL: auto-exam/2016/c-exam-beginner/practice-exam_20160402/ravard
+
+= Git history ==================================================================
+$> git -C /var/folders/p6/07qhgbhs3g96d45n9t3tx5yh0000gq/T/tmp3doIJ_/user log --pretty='%H - %an, %ad : %s'
+68c45913bdc8033127673ba510c39ef02d375eb4 - Robin AVARD, Sat Apr 2 09:11:49 2016 +0200 : ...
+038a61c19ab8d824ee5d1a9af947f0b0827a0d9b - Robin AVARD, Sat Apr 2 09:08:04 2016 +0200 : print_memory
+67c279a43602167bb928067e9ad2814b93519306 - Robin AVARD, Sat Apr 2 08:35:50 2016 +0200 : allez ma poue
+90cfddf0d7c8bbd36524e204f42092b9362d976b - Robin AVARD, Sat Apr 2 08:31:10 2016 +0200 : aller go test lvl 5
+35a00ecabb90a1f1d42737be62246cc22311f4c5 - Robin AVARD, Sat Apr 2 08:26:26 2016 +0200 : k
+ 
+= Collected files ==========================================
+$> ls -lAR /var/folders/p6/07qhgbhs3g96d45n9t3tx5yh0000gq/T/tmp3doIJ_/user
+total 8
+-rw-r--r--  1 deepthought  deepthought  1452 Apr  2 09:12 __GIT_HISTORY
+drwxr-xr-x  5 deepthought  deepthought   170 Apr  2 09:12 brainfuck
+drwxr-xr-x  3 deepthought  deepthought   102 Apr  2 09:12 ft_itoa_base
+drwxr-xr-x  4 deepthought  deepthought   136 Apr  2 09:12 ft_list_foreach
+drwxr-xr-x  3 deepthought  deepthought   102 Apr  2 09:12 print_memory
+drwxr-xr-x  3 deepthought  deepthought   102 Apr  2 09:12 rev_wstr
+
+/var/folders/p6/07qhgbhs3g96d45n9t3tx5yh0000gq/T/tmp3doIJ_/user/brainfuck:
+total 24
+-rw-r--r--  1 deepthought  deepthought   317 Apr  2 09:12 brainfuck.h
+-rw-r--r--  1 deepthought  deepthought  1232 Apr  2 09:12 ft_inter_brainfuck.c
+-rw-r--r--  1 deepthought  deepthought   474 Apr  2 09:12 main.c
+
+/var/folders/p6/07qhgbhs3g96d45n9t3tx5yh0000gq/T/tmp3doIJ_/user/ft_itoa_base:
+total 8
+-rw-r--r--  1 deepthought  deepthought  863 Apr  2 09:12 ft_itoa_base.c
+
+/var/folders/p6/07qhgbhs3g96d45n9t3tx5yh0000gq/T/tmp3doIJ_/user/ft_list_foreach:
+total 16
+-rw-r--r--  1 deepthought  deepthought  137 Apr  2 09:12 ft_list.h
+-rw-r--r--  1 deepthought  deepthought  179 Apr  2 09:12 ft_list_foreach.c
+
+/var/folders/p6/07qhgbhs3g96d45n9t3tx5yh0000gq/T/tmp3doIJ_/user/print_memory:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1385 Apr  2 09:12 print_memory.c
+
+/var/folders/p6/07qhgbhs3g96d45n9t3tx5yh0000gq/T/tmp3doIJ_/user/rev_wstr:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1659 Apr  2 09:12 rev_wstr.c
+ 
+= ft_itoa_base =================================================================
+$> clang -Wextra -Wall -Werror ft_itoa_base.c main.c -o user_exe 
+
+= Test 1 ===================================================
+$> ./3d1x46kex1ixmyrp31anv00o 
+$> diff -U 3 user_output_test1 test1.output | cat -e
+
+Diff OK :D
+= Test 2 ===================================================
+$> ./np4w3yhnz7e2ldt54x277jit "21" "2313" "12"
+$> diff -U 3 user_output_test2 test2.output | cat -e
+
+Diff OK :D
+= Test 3 ===================================================
+$> ./h8g8cbqg9ewkv3i15fnfqk0b "2147483647" "10"
+$> diff -U 3 user_output_test3 test3.output | cat -e
+
+Diff OK :D
+= Test 4 ===================================================
+$> ./ggvdcyfrpcjqe0i1e2b5w778 "-2147483648" "10"
+$> diff -U 3 user_output_test4 test4.output | cat -e
+
+Diff OK :D
+= Test 5 ===================================================
+$> ./llg7lg1n5k4re3pqivunbrfk "0" "2"
+$> diff -U 3 user_output_test5 test5.output | cat -e
+
+Diff OK :D
+= Test 6 ===================================================
+$> ./d0s3yn4d3f0q2we1a0ljp04g "--223" "10"
+$> diff -U 3 user_output_test6 test6.output | cat -e
+
+Diff OK :D
+= Test 7 ===================================================
+$> ./sny8civ7y1i7bo0kpaivbzmq "287550841" "4"
+$> diff -U 3 user_output_test7 test7.output | cat -e
+
+Diff OK :D
+= Test 8 ===================================================
+$> ./prynh8z57bcz76uc9ov3g6l8 "941183337" "14"
+$> diff -U 3 user_output_test8 test8.output | cat -e
+
+Diff OK :D
+= Test 9 ===================================================
+$> ./6o3h9ea8neik358e1h5jqg5m "1221675502" "8"
+$> diff -U 3 user_output_test9 test9.output | cat -e
+
+Diff OK :D
+= Test 10 ==================================================
+$> ./357e34esap4djegyq4nc54ax "1945084312" "12"
+$> diff -U 3 user_output_test10 test10.output | cat -e
+
+Diff OK :D
+= Test 11 ==================================================
+$> ./zb1o7srt2k96g9ty2o948u2k "105214774" "9"
+$> diff -U 3 user_output_test11 test11.output | cat -e
+
+Diff OK :D
+= Test 12 ==================================================
+$> ./k33rrd43m62sq2k0tptq9kup "-56741745" "5"
+$> diff -U 3 user_output_test12 test12.output | cat -e
+--- user_output_test12	2016-04-02 09:12:38.000000000 +0200$
++++ test12.output	2016-04-02 09:12:38.000000000 +0200$
+@@ -1 +1 @@$
+-134441204201$
++104011213440$
+
+Diff KO :(
+Grade: 0
+
+= Final grade: 0 ===============================================================
