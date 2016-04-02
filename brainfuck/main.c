@@ -22,8 +22,10 @@ void	ft_putstr(char *s)
 int		main(int argc, char **argv)
 {
 		char	*tab;
-		int		i;
+		int	i;
 		t_list	*list;
+		int	octet[1];
+		int	operateur[1];
 
 		if (argc != 2)
 			ft_putchar('\n');
@@ -34,7 +36,10 @@ int		main(int argc, char **argv)
 			while (++i < 2048)
 				tab[i] = 0;
 			list = NULL;
-			ft_inter_brainfuck(tab, 0, argv[1], 0, list);
+			octet[0] = 0;
+			operateur[0] = 0;
+			while (argv[1][operateur[0]])
+				list = ft_inter_brainfuck(tab, octet, argv[1], operateur, list);
 		}
 		return (0);
 }	
