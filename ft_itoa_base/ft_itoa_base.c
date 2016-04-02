@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include <stdlib.h>
 
 int	octet_needed(int value, int base)
@@ -20,7 +21,7 @@ char	*ft_itoa_base(int value, int base)
 	int			i;
 
 	exept = (base == 10 && value < 0) ? 1 : 0;
-	val = (unsigned int)(exept == 1) ? -value : value;
+	val = (unsigned int)(value < 0) ? -value : value;
 	len = octet_needed(val, base);
 	tab = (char *)malloc(sizeof(char) * len);
 	tab[len - 1] = val % base;
