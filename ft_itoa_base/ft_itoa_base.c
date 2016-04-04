@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include <stdlib.h>
 
 int	octet_needed(int value, int base)
