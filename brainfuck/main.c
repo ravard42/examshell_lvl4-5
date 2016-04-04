@@ -21,11 +21,11 @@ int		main(int argc, char **argv)
 			i = -1;
 			while (++i < 2048)
 				tab[i] = 0;
-			list = NULL;
+			list = create_list(argv[1]);
 			octet[0] = 0;
 			operateur[0] = 0;
 			while (argv[1][operateur[0]])
-				list = ft_inter_brainfuck(tab, octet, argv[1], operateur, list);
+				ft_inter_brainfuck(tab, octet, argv[1], operateur, list);
 			free(tab);
 		}
 		return (0);
