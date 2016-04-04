@@ -72,10 +72,18 @@ char	**ft_split(char *str)
 		int			i;
 
 		if (!str)
-			return (NULL);
+		{
+			ret = (char **)malloc(sizeof(char *));
+			*ret = NULL;
+			return (ret);
+		}
 		str = revstr(rm_wsp(revstr(rm_wsp(str))));
 		if (str[0] == '\0')
-			return (NULL);
+		{
+			ret = (char **)malloc(sizeof(char *));
+			*ret = NULL;
+			return (ret);
+		}
 		list = NULL;
 		numb_w = 0;
 		end[0] = 0;
