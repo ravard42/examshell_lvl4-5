@@ -1,5 +1,6 @@
 #include <stdlib.h>
 
+
 typedef struct			s_list
 {
 	char				*indice_next_word;
