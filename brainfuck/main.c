@@ -1,22 +1,8 @@
 #include "brainfuck.h"
 
-
-
 void	ft_putchar(char c)
 {
 	write(1, &c, 1);
-}
-
-
-
-void	ft_putstr(char *s)
-{
-	int		i;
-
-	i = -1;
-	if (s)
-		while (s[++i])
-			ft_putchar(s[i]);
 }
 
 int		main(int argc, char **argv)
@@ -40,6 +26,7 @@ int		main(int argc, char **argv)
 			operateur[0] = 0;
 			while (argv[1][operateur[0]])
 				list = ft_inter_brainfuck(tab, octet, argv[1], operateur, list);
+			free(tab);
 		}
 		return (0);
 }	

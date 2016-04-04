@@ -11,7 +11,6 @@ typedef struct			s_list
 }						t_list;
 
 void	ft_putchar(char c);
-void	ft_putstr(char *s);
 t_list	*ft_inter_brainfuck(char *tab, int *octet, char *s, int *operateur, t_list *list_prev);
 
 #endif
