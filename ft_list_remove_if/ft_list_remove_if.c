@@ -32,5 +32,8 @@ void ft_list_remove_if(t_list **begin_list, void *data_ref, int (*cmp)())   // l
 			free(elem_to_free);
 		}		
 	}
-	list_to_ret->next = NULL;
+	if (list_to_ret == NULL)
+		*begin_list = NULL;
+	else
+		list_to_ret->next = NULL;
 }
