@@ -19,7 +19,7 @@ char	*ft_itoa(int nbr)
 	int		exept;
 
 	neg = (nbr >= 0) ? 0 : 1;
-	exept = (nbr = -2147483648) ? 1 : 0;
+	exept = (nbr == -2147483648) ? 1 : 0;
 	if (exept)
 		nbr = 2147483647;
 	nbr = (nbr > 0) ? nbr : -nbr;
