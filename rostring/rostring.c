@@ -1,6 +1,7 @@
 #include <unistd.h>
 #include <stdlib.h>
 
+
 typedef struct		s_list
 {
 	char		*ptr_sur_next_w;
