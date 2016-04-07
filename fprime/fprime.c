@@ -41,7 +41,12 @@ void	fprime(unsigned int nbr)
 	prime = 2;
 	while (nbr != 1)
 	{
-		if (nbr % prime != 0)
+		if (is_prime(nbr))
+		{
+			printf("%d\n", nbr);
+			nbr = 1;
+		}
+		else if (nbr % prime != 0)
 			prime = next_prime(prime);
 		else
 		{
@@ -50,10 +55,8 @@ void	fprime(unsigned int nbr)
 				printf("%d*", prime);
 			else
 				printf("%d\n", prime);
-				
 		}
 	}
-	
 }
 
 
