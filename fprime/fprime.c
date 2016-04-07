@@ -3,7 +3,7 @@
 
 unsigned int	racine_inf_de(unsigned int nbr)
 {
-	int	i;
+	unsigned int	i;
 
 	i = 0;
 	while (i * i <= nbr)
