@@ -1,5 +1,5 @@
-#ifndef LIST_H
-# define LISTE_H
+#ifndef FT_LIST_H
+# define FT_LIST_H
 
 typedef struct		s_list
 {
