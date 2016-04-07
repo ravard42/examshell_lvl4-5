@@ -22,7 +22,6 @@ int	is_prime(unsigned int nbr)
 	return (1);
 }
 
-
 unsigned int	next_prime(unsigned int prime)
 {
 	unsigned int	i;
