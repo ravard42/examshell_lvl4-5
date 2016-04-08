@@ -1,4 +1,6 @@
 #include <stdlib.h>
+#include <stdio.h>
+
 
 int		nbr_octet(int	nbr)
 {
@@ -25,6 +27,7 @@ char	*ft_itoa(int nbr)
 	nbr = (nbr > 0) ? nbr : -nbr;
 	len = nbr_octet(nbr) + neg;
 	ret = (char *)malloc(sizeof(char) * (len + 1));
+	ret[len] = '\0';
 	ret[len - 1] = '0' + nbr % 10;
 	i = len - 2;
 	while ((nbr = nbr / 10))
