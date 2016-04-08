@@ -11,7 +11,7 @@ void ft_list_remove_if(t_list **begin_list, void *data_ref, int (*cmp)())   // l
 	list = *begin_list;
 	while (list)
 	{
-		if (!(*cmp)(data_ref, list->data))
+		if ((*cmp)(data_ref, list->data))
 		{
 			if (list_to_ret == NULL)       //on coffre le first a garder pour renvoyer
 			{
