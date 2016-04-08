@@ -1,7 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-
 int		nbr_octet(int	nbr)
 {
 	int		i;
