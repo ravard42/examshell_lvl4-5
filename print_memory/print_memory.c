@@ -68,7 +68,7 @@ void	print_memory(const void *addr, size_t size)
 		}
 		while (j < i)
 		{
-			if (*((char *)addr + j) >= 33 && *((char *)addr + j) <= 126) 
+			if (*((char *)addr + j) >= 32 && *((char *)addr + j) <= 126) 
 				ft_putchar(*((char *)addr + j));
 			else
 				ft_putchar('.');
