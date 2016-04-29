@@ -1,29 +1,28 @@
 #include <stdlib.h>
 
-
-int	octet_needed(int value, int base)
+int		octet_needed(unsigned int val, int base)
 {
-	int	i;
+	int		i;
 
 	i = 1;
-	while ((value = (value / base)) != 0)
+	while ((val = val / base) != 0)
 		i++;
 	return (i);
-}	
+}
 
 char	*ft_itoa_base(int value, int base)
 {
-	int			exept;
-	unsigned int		val;
-	int			len;
-	char			*tab;
+	int				exept;
+	unsigned int	val;
+	int				*tab;
 	char			*ret;
-	int			i;
+	int				len;
+	int				i;
 
-	exept = (base == 10 && value < 0) ? 1 : 0;
+	exept = (value < 0 && base == 10) ? 1 : 0;
 	val = (unsigned int)(value < 0) ? -value : value;
 	len = octet_needed(val, base);
-	tab = (char *)malloc(sizeof(char) * len);
+	tab = (int *)malloc(sizeof(int) * len);
 	tab[len - 1] = val % base;
 	i = 2;
 	while (i <= len)
@@ -33,16 +32,17 @@ char	*ft_itoa_base(int value, int base)
 		i++;
 	}
 	ret = (char *)malloc(sizeof(char) * (len + exept + 1));
-	if (exept)
+	if (exept == 1)
 		ret[0] = '-';
-	i = -1;
-	while (++i < len)
+	i = 0;
+	while (i < len + exept)
 	{
-		if (tab[i] >= 0 && tab[i] <= 9)
+		if (tab[i] <= 9)
 			ret[i + exept] = '0' + tab[i];
-		else if (tab[i] >= 10 && tab[i] <= 16)
+		else
 			ret[i + exept] = 'A' - 10 + tab[i];
+		i++;
 	}
-	ret[i + exept] = '\0';
+	ret[i] = '\0';
 	return (ret);
 }

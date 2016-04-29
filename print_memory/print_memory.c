@@ -5,7 +5,7 @@ void	ft_putchar(char c)
 	write(1, &c, 1);
 }
 
-void	ft_put_hexamemory(unsigned char c)
+void	ft_puthexamemory(unsigned char c)
 {
 	if (c < 16)
 	{
@@ -16,65 +16,56 @@ void	ft_put_hexamemory(unsigned char c)
 	}
 	else
 	{
-		ft_put_hexamemory(c / 16);
-		ft_put_hexamemory(c % 16);
+		ft_puthexamemory(c / 16);
+		ft_puthexamemory(c % 16);
 	}
 }
 
-void	ft_put_hexamemory_bis(unsigned char c)
+void	ft_puthexamemory2(unsigned char c)
 {
 	if (c < 16)
 		ft_putchar('0');
-	ft_put_hexamemory(c);
+	ft_puthexamemory(c);
 }
 
 void	print_memory(const void *addr, size_t size)
 {
-	int	cpt;
-	int	l_cpt;
 	size_t	i;
 	size_t	j;
-	int	first;
+	int		cpt;
 
 	i = 0;
-	first = 0;
+	j = 0;
 	while (i < size)
 	{
 		cpt = 0;
-		j = i;
 		while (i < size && cpt < 40)
 		{
-			ft_put_hexamemory_bis(*((char *)addr + i));
-			i++;
+			ft_puthexamemory2(*((unsigned char *)addr + i));
 			cpt += 2;
+			i++;
 			if (i < size)
 			{
-				ft_put_hexamemory_bis(*((char *)addr + i));
+				ft_puthexamemory2(*((unsigned char *)addr + i));
 				cpt += 2;
 				i++;
 			}
 			ft_putchar(' ');
 			cpt++;
 		}
-		if (first == 0)
-			l_cpt = cpt;
-		else
+		while (cpt < 40)
 		{
-			while (cpt != l_cpt)
-			{
-				ft_putchar(' ');
-				cpt++;
-			}
+			ft_putchar(' ');
+			cpt++;
 		}
 		while (j < i)
 		{
-			if (*((char *)addr + j) >= 32 && *((char *)addr + j) <= 126) 
-				ft_putchar(*((char *)addr + j));
+			if (*((unsigned char *)addr + j) >= 32 && *((unsigned char *)addr + j) <= 126)
+				ft_putchar(*((unsigned char *)addr + j));
 			else
 				ft_putchar('.');
 			j++;
 		}
-		ft_putchar('\n');	
-		first = 1;
+		ft_putchar('\n');
 	}
 }
